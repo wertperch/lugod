@@ -9,8 +9,6 @@ sitemap:
 ---
 ## About Us
 
-<span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
-
 Our goals are to advocate the use of Linux and Open Source, to educate the community on these software alternatives, and to support and provide a social network for local Linux users.
 
 LUGOD holds regular meetings twice a month. On the first Tuesday of each month, we hold a social gathering at a local restaurant or café, and on the third Monday of each month we meet at the Davis Public Library to listen to informative presentations by guest speakers. (Day, time and location subject to change!)
