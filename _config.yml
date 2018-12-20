@@ -15,6 +15,15 @@ defaults:
     layout: post
     author:
 
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    permalink: "/blog/:title/"
+    layout: post
+    author:
+
 # Jekyll
 permalink:          /blog/:title/
 markdown:           kramdown
@@ -38,7 +47,7 @@ analytics-id:       "default"
 twitter:            default
 facebook:           default
 instagram:          default
-github:             default
+github:             DAVISLUG
 
 # personal
 location:           Davis, CA

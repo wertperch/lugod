@@ -1,14 +1,7 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-  Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-    {% include head.html %}
-
+		{% include head.html %}
 	</head>
 	<body class="is-loading">
 
@@ -20,29 +13,19 @@
 					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
 				</header>
 
-
 				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-						<ul class="icons">
-              <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-              <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-              <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+				<nav id="nav"> {% include nav.html %} </nav>
 
 				<!-- Main -->
 				<div id="main">
 
-          <article class="post featured">
-            <header class="major">
-              <h2><a href="#">LUGOD Blog</a></h2>
-		    <p>Here lives the LUGOD blog. This is where you can expect to find things like organizational updates, upcoming events, technology discussion, local tech news, etc.</p>
+					<!-- Description -->
+					<article class="post featured">
+						<header class="major">
+						<h3><a href="#">The LUGOD Blog</a></h3>
+						<p>Welcome to the LUGOD blog! Here you can find posts about organizational updates, event descriptions, local news, technology discussions, and more. </p>
+					</article>
 
-          </article>
 					<!-- Post -->
 					<section class="posts">
 						{% for post in site.posts %}
@@ -67,13 +50,11 @@
 							</article>
 							{% endif %}
 						{% endfor %}
-
 					</section>
-
 					</div>
 
 				<!-- Footer -->
-        {% include foot.html %}
+						{% include foot.html %}
 
 			</div>
 
