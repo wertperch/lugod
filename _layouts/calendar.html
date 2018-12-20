@@ -4,6 +4,7 @@ layout: page
 {% assign PATH_TO_COMPONENTS =  "/components" | prepend: site.baseurl %}
 
 <div>
+  <a href="{{ site.baseurl }}/{{ page.calendar_csv }}" download>Download events as a CSV</a>
   {{ content }}
 </div>
 
@@ -14,12 +15,12 @@ layout: page
   <div class="page-header">
 
     <div class="pull-right form-inline">
-      <div class="small-btn btn-group">
+      <div class="pull-right btn-group">
         <button class="small-btn btn btn-primary" data-calendar-nav="prev"><< Prev</button>
         <button class="small-btn btn btn-default" data-calendar-nav="today">Today</button>
         <button class="small-btn btn btn-primary" data-calendar-nav="next">Next >></button>
       </div>
-      <div class="small-btn btn-group">
+      <div class="btn-group">
         <button class="small-btn btn btn-warning" data-calendar-view="year">Year</button>
         <button class="small-btn btn btn-warning active" data-calendar-view="month">Month</button>
         <button class="small-btn btn btn-warning" data-calendar-view="week">Week</button>
@@ -50,18 +51,12 @@ layout: page
 
   "use strict";
 
-  // parse CSV to JSON
-  Papa.parse("{{ site.baseurl }}/{{ page.calendar_csv }}", {
-    download: true,
-    header: false,
-    complete: function(results) {
-      // console.log(JSON.stringify(results.data));
-      loadCalendar(parseEvents(results.data));
-    }
-  });
+  // parse CSV
+  loadCalendar(parseEvents( '{{ site.data.events | jsonify }}' ));
 
   // Format the events json to be compatible with Bootstrap-Calendar format
-  function parseEvents(rows) {
+  function parseEvents(rowsString) {
+    var rows = JSON.parse(rowsString);
     rows.shift(); // remove header
     var inputDateFormat = "M/D/YYYY H:mm A Z"; // timezone will be added below
     var result = [];
@@ -72,19 +67,19 @@ layout: page
 
       var formattedEvent = {};
       formattedEvent['id']    = index;
-      formattedEvent['title'] = columns[0];
+      formattedEvent['title'] = columns.Title;
 
-      var start = columns[1] + ' {{ page.calendar_timezone_offset }}'; // add timezone offset
-      var end   = columns[2] + ' {{ page.calendar_timezone_offset }}';
+      var start = columns.Start + ' {{ page.calendar_timezone_offset }}'; // add timezone offset
+      var end   = columns.End + ' {{ page.calendar_timezone_offset }}';
 
       formattedEvent['start'] = moment(start, inputDateFormat).valueOf(); // Unix milliseconds
       formattedEvent['end']   = moment(end, inputDateFormat).valueOf();
 
-      if (!_.isEmpty(columns[3]))
-        formattedEvent['class'] = 'event-' + columns[3].toLowerCase(); // predefined CSS classname
+      if (!_.isEmpty(columns.Mark))
+        formattedEvent['class'] = 'event-' + columns.Mark.toLowerCase(); // predefined CSS classname
 
-      if (!_.isEmpty(columns[4]))
-        formattedEvent['url'] = columns[4];
+      if (!_.isEmpty(columns.URL))
+        formattedEvent['url'] = columns.URL;
 
       result.push(formattedEvent);
     });
@@ -103,10 +98,10 @@ layout: page
       weekbox:false,
       display_week_numbers: false,
 
-      day: 
-      {% if page.calendar_focus_date %} 
+      day:
+      {% if page.calendar_focus_date %}
         "{{ page.calendar_focus_date }}"
-      {% else %} 
+      {% else %}
         moment().format('YYYY-MM-DD') // today as default view
       {% endif%}
       ,
@@ -125,7 +120,7 @@ layout: page
       },
       onAfterViewLoad: function(view) {
         $('.page-header h3').text(this.getTitle());
-        $('.small-btn btn-group button').removeClass('active');
+        $('btn-group button').removeClass('active');
         $('button[data-calendar-view="' + view + '"]').addClass('active');
       },
       classes: {
@@ -137,14 +132,14 @@ layout: page
 
     var calendar = $('#calendar').calendar(options);
 
-    $('.small-btn btn-group button[data-calendar-nav]').each(function() {
+    $('btn-group button[data-calendar-nav]').each(function() {
       var $this = $(this);
       $this.click(function() {
         calendar.navigate($this.data('calendar-nav'));
       });
     });
 
-    $('.small-btn btn-group button[data-calendar-view]').each(function() {
+    $('btn-group button[data-calendar-view]').each(function() {
       var $this = $(this);
       $this.click(function() {
         calendar.view($this.data('calendar-view'));
