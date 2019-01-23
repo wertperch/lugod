@@ -9,7 +9,7 @@ sitemap:
 ---
 ## FAQ and Help Documentation
 
-Link to FAQ/Help docs
+[Link to Documents]({{ site.baseurl }}{% post_url 2019-01-23-FAQ-Help-Documents.md})
 
 ## Flyers
 
