@@ -31,6 +31,8 @@ Will Marshall (Treasurer) is a photographer who has been using Linux and open-so
 
 The position of Secretary is vacant at the time of writing. If you are intersted in the position, please email Tim or Kevin.
 
+Details of the responsibilities are available at [our bylaws page]({{ site.baseurl }}{% link __documents/bylaws.md %})
+
 ## Volunteer Officers
 
 Bill Kendrick is our Public Relations Officer and remains a steadfast supporter of LUGOD despite relocating to Washington state. He is CTO of Smashwords, an ebook publishing and distribution platform. In his spare time he writes Open Source games and educational software, and runs an annual retrocomputing & classic gaming event. 
