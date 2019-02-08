@@ -31,7 +31,7 @@ Will Marshall (Treasurer) is a photographer who has been using Linux and open-so
 
 The position of Secretary is vacant at the time of writing. If you are intersted in the position, please email Tim or Kevin.
 
-Details of the responsibilities are available at [our bylaws page]({% link /documents/bylaws.m %}).
+Details of the responsibilities are available at [our bylaws page]({{ site.baseurl }}{% link /documents/bylaws.m %}).
 
 ## Volunteer Officers
 
