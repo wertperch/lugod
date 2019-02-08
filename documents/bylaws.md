@@ -10,16 +10,14 @@ description: Officers' Responsibilities, and Club Operations
 
 All of the duties listed below, and elsewhere in these bylaws, are listed only to make sure they all get done.  It is only the duty of the officer in question to make sure somebody does it.
 
-i: root (Chairperson) is the glue that keeps it all together.  She/he tries to keep LUGOD on track.  The duties of the root shall include:
-         a: To be the primary signatory
-         b: To set the agenda for meetings
-         c: To act as chair of the meetings
-         d: To oversee the committees by keeping in regular contact with the
-            committee chairs
-         e: To check the PO Box at least once for each meeting.
+1. root (Chairperson) is the glue that keeps it all together.  She/he tries to keep LUGOD on track.  The duties of the root shall include
+    1. To be the primary signatory
+    1. To set the agenda for meetings
+    1. To act as chair of the meetings
+    1. To oversee the committees by keeping in regular contact with committee chairs
+    1. To check the PO Box at least once for each meeting.
 
-     ii: sys (Vice Chair) does all the stuff that keeps LUGOD running.  The
-        duties of sys shall include:
+1. sys (Vice Chair) does all the stuff that keeps LUGOD running. The duties of sys shall include:
          a: Making preparations for the meeting, including coordinating the
             advertising, reservations, setup of any necessary equipment, and
             with the guest speakers.
